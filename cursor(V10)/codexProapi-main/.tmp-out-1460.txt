@@ -1,0 +1,10 @@
+[OK] Loaded 1 account(s) for round-robin
+
+Codex Pro API 宸插惎鍔?http://0.0.0.0:1460
+   閰嶇疆椤碉紙娣诲姞璐﹀彿锛? http://localhost:1460/
+   鍋ュ悍妫€鏌? http://localhost:1460/health
+   OAuth 璇婃柇: http://localhost:1460/auth/debug
+   OAuth 鍥炶皟: http://localhost:1460/auth/callback
+   瀵硅瘽鎺ュ彛: http://localhost:1460/v1/chat/completions
+   寤鸿妯″瀷: gpt-5.3-codex
+

@@ -1,0 +1,10 @@
+PID: 22732
+CWD: D:\cursor-launcher(V8)-Preview
+Command: cd codexProapi-main && node src/index.js
+Running: false
+Exit Code: 1
+Last Updated: 2026-02-22T07:27:29.089Z
+--- STDOUT ---
+(empty)
+--- STDERR ---
+(empty)

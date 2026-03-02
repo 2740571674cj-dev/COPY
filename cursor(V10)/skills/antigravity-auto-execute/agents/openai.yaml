@@ -1,0 +1,4 @@
+interface:
+  display_name: "Antigravity Auto Execute"
+  short_description: "Auto execute without confirmation clicks."
+  default_prompt: "Execute tasks end-to-end automatically without asking for approval clicks; proceed directly with tool calls and complete all steps."

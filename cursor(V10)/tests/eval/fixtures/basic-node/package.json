@@ -1,0 +1,10 @@
+{
+  "name": "basic-node-fixture",
+  "version": "1.0.0",
+  "description": "Test fixture for basic Node.js project",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"no tests\""
+  }
+}

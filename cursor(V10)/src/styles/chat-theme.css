@@ -1,0 +1,395 @@
+/* ============================================================
+   Chat Theme — CSS Variables & Component Styles
+   统一对话栏暗色主题变量
+   ============================================================ */
+
+:root {
+    /* ---- 面板层次 ---- */
+    --chat-bg: #1e1e1e;
+    --chat-panel: #252526;
+    --chat-surface: #1a1a1a;
+    --chat-border: #2a2a2a;
+    --chat-border-subtle: #333;
+    --chat-border-hover: #444;
+
+    /* ---- 文字 ---- */
+    --chat-text: #ccc;
+    --chat-text-muted: #888;
+    --chat-text-dim: #666;
+    --chat-text-bright: #e0e0e0;
+
+    /* ---- 角色头像 ---- */
+    --chat-avatar-ai: #2563eb;
+    --chat-avatar-user: #555;
+
+    /* ---- Diff 颜色 ---- */
+    --diff-add-bg: rgba(35, 134, 54, 0.18);
+    --diff-add-border: rgba(35, 134, 54, 0.35);
+    --diff-add-text: #7ee787;
+    --diff-add-gutter: #2ea04370;
+    --diff-del-bg: rgba(218, 54, 51, 0.15);
+    --diff-del-border: rgba(218, 54, 51, 0.30);
+    --diff-del-text: #f97583;
+    --diff-del-gutter: #da363370;
+    --diff-neutral-bg: transparent;
+    --diff-gutter: #444;
+
+    /* ---- Callout 语义色 ---- */
+    --callout-info-bg: #162035;
+    --callout-info-border: #1e3050;
+    --callout-info-text: #79b8ff;
+    --callout-warn-bg: #2b2318;
+    --callout-warn-border: #3a2e1e;
+    --callout-warn-text: #ffab70;
+    --callout-success-bg: #162b1f;
+    --callout-success-border: #1e3a29;
+    --callout-success-text: #7ee787;
+    --callout-error-bg: #2b1a1a;
+    --callout-error-border: #3a1e1e;
+    --callout-error-text: #f97583;
+
+    /* ---- 代码块 ---- */
+    --code-bg: #161616;
+    --code-border: #2a2a2a;
+    --code-header-bg: #1a1a1a;
+    --code-text: #d4d4d4;
+    --code-inline-bg: #2a2a2a;
+    --code-inline-border: #3a3a3a;
+    --code-inline-text: #ce9178;
+
+    /* ---- 按钮 ---- */
+    --chat-btn-primary: #0e639c;
+    --chat-btn-primary-hover: #1177bb;
+    --chat-btn-secondary: #2d2d2d;
+    --chat-btn-secondary-hover: #3a3a3a;
+
+    /* ---- 间距 ---- */
+    --chat-msg-gap: 14px;
+    --chat-block-gap: 8px;
+    --chat-card-radius: 6px;
+}
+
+/* ============================================================
+   消息容器
+   ============================================================ */
+.chat-message {
+    margin-bottom: var(--chat-msg-gap);
+}
+
+.chat-message-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.chat-avatar {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+    letter-spacing: -0.3px;
+}
+
+.chat-avatar--ai {
+    background-color: var(--chat-avatar-ai);
+}
+
+.chat-avatar--user {
+    background-color: var(--chat-avatar-user);
+}
+
+.chat-role-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--chat-text-muted);
+}
+
+.chat-message-body {
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--chat-block-gap);
+}
+
+/* ============================================================
+   文本段落
+   ============================================================ */
+.chat-text-block {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--chat-text);
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.chat-text-block strong {
+    color: var(--chat-text-bright);
+    font-weight: 600;
+}
+
+/* 内联代码 — 胶囊样式 */
+.chat-inline-code {
+    font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+    font-size: 10.5px;
+    background: var(--code-inline-bg);
+    border: 1px solid var(--code-inline-border);
+    color: var(--code-inline-text);
+    padding: 1px 5px;
+    border-radius: 3px;
+    word-break: break-all;
+}
+
+/* ============================================================
+   代码块
+   ============================================================ */
+.chat-code-block {
+    border-radius: var(--chat-card-radius);
+    border: 1px solid var(--code-border);
+    overflow: hidden;
+    font-size: 0;
+}
+
+.chat-code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background: var(--code-header-bg);
+    border-bottom: 1px solid var(--code-border);
+}
+
+.chat-code-lang {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--chat-text-dim);
+    font-family: 'Cascadia Code', Consolas, monospace;
+}
+
+.chat-code-copy {
+    font-size: 9px;
+    color: var(--chat-text-dim);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 2px 6px;
+    border-radius: 3px;
+    transition: all 0.15s;
+}
+
+.chat-code-copy:hover {
+    color: var(--chat-text);
+    background: var(--chat-btn-secondary);
+}
+
+.chat-code-body {
+    background: var(--code-bg);
+    padding: 8px 12px;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.chat-code-body pre {
+    margin: 0;
+    font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+    font-size: 11px;
+    line-height: 17px;
+    color: var(--code-text);
+    white-space: pre;
+    tab-size: 4;
+}
+
+/* ============================================================
+   Diff / 文件变更卡片
+   ============================================================ */
+.diff-card {
+    border-radius: var(--chat-card-radius);
+    border: 1px solid var(--code-border);
+    overflow: hidden;
+    background: var(--code-bg);
+}
+
+.diff-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: var(--code-header-bg);
+    border-bottom: 1px solid var(--code-border);
+}
+
+.diff-card-file-icon {
+    width: 14px;
+    height: 14px;
+    color: var(--chat-text-dim);
+    flex-shrink: 0;
+}
+
+.diff-card-filename {
+    flex: 1;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--chat-text);
+    font-family: 'Cascadia Code', Consolas, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.diff-card-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    font-family: 'Cascadia Code', Consolas, monospace;
+    flex-shrink: 0;
+}
+
+.diff-stat-add {
+    color: var(--diff-add-text);
+}
+
+.diff-stat-del {
+    color: var(--diff-del-text);
+}
+
+.diff-card-body {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.diff-line {
+    display: flex;
+    align-items: stretch;
+    font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+    font-size: 11px;
+    line-height: 18px;
+    min-height: 18px;
+}
+
+.diff-gutter {
+    width: 36px;
+    flex-shrink: 0;
+    text-align: right;
+    padding-right: 8px;
+    font-size: 10px;
+    color: var(--diff-gutter);
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.diff-marker {
+    width: 16px;
+    flex-shrink: 0;
+    text-align: center;
+    font-weight: 600;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diff-content {
+    flex: 1;
+    padding: 0 10px 0 4px;
+    white-space: pre;
+    tab-size: 4;
+    min-width: 0;
+}
+
+/* 行级颜色 */
+.diff-line--add {
+    background: var(--diff-add-bg);
+}
+
+.diff-line--add .diff-gutter {
+    color: var(--diff-add-gutter);
+}
+
+.diff-line--add .diff-marker {
+    color: var(--diff-add-text);
+}
+
+.diff-line--add .diff-content {
+    color: var(--diff-add-text);
+}
+
+.diff-line--del {
+    background: var(--diff-del-bg);
+}
+
+.diff-line--del .diff-gutter {
+    color: var(--diff-del-gutter);
+}
+
+.diff-line--del .diff-marker {
+    color: var(--diff-del-text);
+}
+
+.diff-line--del .diff-content {
+    color: var(--diff-del-text);
+}
+
+.diff-line--neutral {
+    background: var(--diff-neutral-bg);
+}
+
+.diff-line--neutral .diff-content {
+    color: var(--chat-text-muted);
+}
+
+/* ============================================================
+   分隔线
+   ============================================================ */
+.chat-section-divider {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0;
+}
+
+.chat-section-divider::before,
+.chat-section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--chat-border);
+}
+
+.chat-section-divider-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--chat-text-dim);
+    white-space: nowrap;
+}
+
+/* ============================================================
+   消息入场动画
+   ============================================================ */
+@keyframes msgSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chat-message-enter {
+    animation: msgSlideIn 0.2s ease-out;
+}

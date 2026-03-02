@@ -1,0 +1,12 @@
+[OK] Loaded Codex auth (single account)
+
+Codex Pro API 宸插惎鍔?http://0.0.0.0:1455
+   閰嶇疆椤碉紙娣诲姞璐﹀彿锛? http://localhost:1455/
+   鍋ュ悍妫€鏌? http://localhost:1455/health
+   OAuth 璇婃柇: http://localhost:1455/auth/debug
+   OAuth 鍥炶皟: http://localhost:1455/auth/callback
+   瀵硅瘽鎺ュ彛: http://localhost:1455/v1/chat/completions
+   寤鸿妯″瀷: gpt-5.3-codex
+
+[OAuth:login] rid=2d2ee919d6e17d46 state=wB4UA50-… redirect_uri=http://localhost:1455/auth/callback legacy=0
+[OAuth:login] rid=acbd0b3b3f079ca3 state=Rvadwb5T… redirect_uri=http://localhost:1455/auth/callback legacy=1
